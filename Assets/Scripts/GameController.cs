@@ -128,16 +128,18 @@ public class GameController : MonoBehaviour
             cardsList[id].image.sprite = puzzleCards[id];
             secondName = puzzleCards[id].name;
 
+            secondClick = false;
+
             if (secondName == firstName)
             {
                 correctNum++;
+                cardsList[firstId].onClick.RemoveAllListeners();
+                cardsList[secondId].onClick.RemoveAllListeners();
                 firstClick = true;
-                secondClick = false;
             }
             else
             {
                 firstClick = false;
-                secondClick = false;
                 StartCoroutine(wait());
             }
         }
