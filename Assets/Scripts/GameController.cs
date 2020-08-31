@@ -165,6 +165,7 @@ public class GameController : MonoBehaviour
         {
             Debug.Log("You Can Win ....");
             firstClick = secondClick = false;
+            Destroy(gameObject);
         }
     }
 }
